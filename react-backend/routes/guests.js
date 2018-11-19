@@ -7,7 +7,7 @@ router.use(express.urlencoded({ extended: false }));
 
 /* GET users listing. */
 router.get('/', function (req, res) {
-  console.log('llll');
+  // console.log('llll');
 
   db.getGuests()
     .then(guests => {
@@ -23,13 +23,13 @@ router.get('/', function (req, res) {
 
 router.post('/', (req, res) => {
   const { fullname, email, guestnum } = req.body
-  console.log(req.body)
+  // console.log(req.body)
   const guest = {
     fullname,
     email,
     guestnum
   }
-  console.log('db guest working?', guest.fullname)
+  console.log('routes post guest working?', guest.fullname)
   db.addNewGuest(guest)
     .then(() => {
       res.sendStatus(200)

@@ -22,6 +22,6 @@ function addNewGuest(guest) {
 // }
 module.exports = {
     getGuests,
-    sumTotalGuest,
+    // sumTotalGuest,
     addNewGuest
 }
