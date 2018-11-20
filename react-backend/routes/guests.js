@@ -22,14 +22,15 @@ router.get('/', function (req, res) {
 
 
 router.post('/', (req, res) => {
-  const { fullname, email, guestnum } = req.body
+  const { fullname, email, guestnum, attending } = req.body
   // console.log(req.body)
   const guest = {
     fullname,
     email,
-    guestnum
+    guestnum,
+    attending
   }
-  console.log('routes post guest working?', guest.fullname)
+
   db.addNewGuest(guest)
     .then(() => {
       res.sendStatus(200)

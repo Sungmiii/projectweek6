@@ -10,7 +10,7 @@ function getGuests() {
 
 function addNewGuest(guest) {
     let db = connection
-    console.log('db guest', guest)
+    console.log('db guest>>>', guest)
     return db('guests')
         .insert(guest)
         .then(result => db('guests').where({ id: result[0] }))
